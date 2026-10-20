@@ -12,7 +12,11 @@
     "backgroundColor": "#F7F6F3",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.beratoguzhan.cafemap"
+      "bundleIdentifier": "com.beratoguzhan.cafemap",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -22,7 +26,8 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.beratoguzhan.cafemap"
+      "package": "com.beratoguzhan.cafemap",
+      "versionCode": 1
     },
     "web": {
       "bundler": "metro",
@@ -30,7 +35,9 @@
       "favicon": "./assets/favicon.png",
       "name": "CafeMap",
       "themeColor": "#7A5230",
-      "backgroundColor": "#F7F6F3"
+      "backgroundColor": "#F7F6F3",
+      "shortName": "CafeMap",
+      "description": "İstanbul'daki bağımsız kafeleri harita üzerinde keşfet."
     },
     "plugins": [
       "expo-router",
@@ -44,7 +51,11 @@
           "image": "./assets/splash-icon.png",
           "imageWidth": 120,
           "resizeMode": "contain",
-          "backgroundColor": "#F7F6F3"
+          "backgroundColor": "#F7F6F3",
+          "dark": {
+            "image": "./assets/splash-icon-dark.png",
+            "backgroundColor": "#141413"
+          }
         }
       ]
     ]
