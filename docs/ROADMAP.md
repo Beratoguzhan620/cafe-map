@@ -17,9 +17,9 @@ Her aşama ayrı bir branch ve PR olarak yapılır (`stage/<no>-<kisa-ad>`). Bir
 - [x] Web için Leaflet yedeği (expo-maps web'i desteklemiyor); birim testleri, uçtan uca test ve CI
 
 ## Aşama 2 — Bottom sheet ve etkileşim
-- [ ] Pine dokununca Gorhom Bottom Sheet: görsel, ad, açıklama, adres; kapanınca seçim sıfırlanır
-- [ ] Seçili pin farklı görünür; kamera seçilen kafeye animasyonla gider
-- [ ] Alt kısımda yatay kafe kartı listesi (harita ile senkron), arama
+- [x] Pine dokununca Gorhom Bottom Sheet: görsel, ad, açıklama, adres; kapanınca seçim sıfırlanır
+- [x] Seçili pin farklı görünür; kamera seçilen kafeye animasyonla gider
+- [x] Alt kısımda yatay kafe kartı listesi (harita ile senkron), arama
 
 ## Aşama 3 — Teslim
 - [ ] App icon + splash (`app.json`)

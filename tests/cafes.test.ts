@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { cafes, cameraFor, priceLabel } from "../src/lib/cafes";
+import { cafes, cameraFor, focusCamera, normalize, priceLabel, searchCafes } from "../src/lib/cafes";
 
 describe("cafes.json", () => {
   it("has 15 cafes with unique ids and images", () => {
@@ -58,5 +58,60 @@ describe("priceLabel", () => {
   it("repeats the lira sign", () => {
     expect(priceLabel(1)).toBe("₺");
     expect(priceLabel(3)).toBe("₺₺₺");
+  });
+});
+
+describe("normalize", () => {
+  it("handles Turkish letters and accents", () => {
+    expect(normalize("Kadıköy")).toBe("kadikoy");
+    expect(normalize("İSTANBUL")).toBe("istanbul");
+    expect(normalize("  Üsküdar   İskele ")).toBe("uskudar iskele");
+    expect(normalize("Çalışmaya uygun")).toBe("calismaya uygun");
+  });
+});
+
+describe("searchCafes", () => {
+  it("returns everything for an empty query", () => {
+    expect(searchCafes(cafes, "   ")).toHaveLength(cafes.length);
+  });
+
+  it("matches names without Turkish characters", () => {
+    expect(searchCafes(cafes, "karakoy tezgah").map((c) => c.id)).toEqual(["karakoy-tezgah"]);
+  });
+
+  it("matches neighbourhoods, districts and tags", () => {
+    expect(searchCafes(cafes, "moda").map((c) => c.id)).toEqual(["kuytu-kahve"]);
+    const kadikoy = searchCafes(cafes, "KADIKÖY");
+    expect(kadikoy.length).toBeGreaterThan(1);
+    expect(kadikoy.every((c) => c.district === "Kadıköy")).toBe(true);
+    const view = searchCafes(cafes, "deniz manzarası");
+    expect(view.length).toBeGreaterThan(1);
+    expect(view.every((c) => c.tags.includes("Deniz manzarası"))).toBe(true);
+  });
+
+  it("needs every word to match", () => {
+    expect(searchCafes(cafes, "bahçe üsküdar").map((c) => c.id)).toEqual(["kuzguncuk-bahce"]);
+    expect(searchCafes(cafes, "bebek kadıköy")).toEqual([]);
+  });
+
+  it("keeps the original order", () => {
+    const ids = searchCafes(cafes, "uygun").map((c) => c.id);
+    expect(ids).toEqual(cafes.filter((c) => ids.includes(c.id)).map((c) => c.id));
+  });
+});
+
+describe("focusCamera", () => {
+  it("centres on the cafe without an offset", () => {
+    const cafe = cafes[0];
+    expect(focusCamera(cafe)).toEqual({ latitude: cafe.latitude, longitude: cafe.longitude, zoom: 15 });
+  });
+
+  it("moves the centre south so the cafe sits higher on screen", () => {
+    const cafe = cafes[0];
+    const camera = focusCamera(cafe, 200);
+    expect(camera.latitude).toBeLessThan(cafe.latitude);
+    // 200px at zoom 15 is about 0.0066° of latitude around Istanbul.
+    expect(cafe.latitude - camera.latitude).toBeCloseTo(0.0065, 3);
+    expect(camera.longitude).toBe(cafe.longitude);
   });
 });
