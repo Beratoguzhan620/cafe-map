@@ -2,8 +2,8 @@ import "leaflet/dist/leaflet.css";
 import "./cafe-map.web.css";
 
 import L from "leaflet";
-import { useMemo } from "react";
-import { AttributionControl, MapContainer, Marker, TileLayer, Tooltip } from "react-leaflet";
+import { useEffect, useMemo, useRef } from "react";
+import { AttributionControl, MapContainer, Marker, TileLayer, Tooltip, useMap } from "react-leaflet";
 
 import type { CafeMapProps } from "./CafeMap.types";
 
@@ -27,8 +27,23 @@ const pin = (selected: boolean) =>
     tooltipAnchor: [0, -36],
   });
 
+/** Flies to the requested camera whenever it changes (not on the first render). */
+function CameraController({ camera }: Pick<CafeMapProps, "camera">) {
+  const map = useMap();
+  const first = useRef(true);
+  const { latitude, longitude, zoom } = camera;
+  useEffect(() => {
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    map.flyTo([latitude, longitude], zoom, { duration: 0.6 });
+  }, [map, latitude, longitude, zoom]);
+  return null;
+}
+
 /** Web fallback: expo-maps has no web support, so the web build uses Leaflet with CARTO tiles. */
-export function CafeMap({ cafes, initialCamera, selectedId, onSelect, dark }: CafeMapProps) {
+export function CafeMap({ cafes, initialCamera, camera, selectedId, onSelect, dark }: CafeMapProps) {
   const icons = useMemo(() => ({ normal: pin(false), selected: pin(true) }), []);
 
   return (
@@ -40,6 +55,7 @@ export function CafeMap({ cafes, initialCamera, selectedId, onSelect, dark }: Ca
       attributionControl={false}
     >
       <AttributionControl position="bottomright" prefix="Leaflet" />
+      <CameraController camera={camera} />
       <TileLayer key={dark ? "dark" : "light"} url={dark ? TILES.dark : TILES.light} attribution={ATTRIBUTION} />
       {cafes.map((cafe) => (
         <Marker
@@ -48,6 +64,7 @@ export function CafeMap({ cafes, initialCamera, selectedId, onSelect, dark }: Ca
           icon={cafe.id === selectedId ? icons.selected : icons.normal}
           title={cafe.name}
           keyboard
+          zIndexOffset={cafe.id === selectedId ? 1000 : 0}
           eventHandlers={{ click: () => onSelect?.(cafe.id) }}
         >
           <Tooltip direction="top" className="cm-tooltip">

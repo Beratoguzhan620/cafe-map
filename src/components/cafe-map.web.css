@@ -92,3 +92,8 @@
 .dark .cm-pin:focus-visible .cm-pin__body {
   outline-color: #edebe6;
 }
+
+/* Keep the attribution above the card list at the bottom of the screen. */
+.cm-map .leaflet-bottom {
+  bottom: 120px;
+}
