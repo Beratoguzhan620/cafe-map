@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "CafeMap",
+    "slug": "cafe-map",
+    "scheme": "cafemap",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "description": "İstanbul'daki bağımsız kafeleri harita üzerinde keşfet.",
+    "primaryColor": "#7A5230",
+    "backgroundColor": "#F7F6F3",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.beratoguzhan.cafemap"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#7A5230",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.beratoguzhan.cafemap"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png",
+      "name": "CafeMap",
+      "themeColor": "#7A5230",
+      "backgroundColor": "#F7F6F3"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-font",
+      "expo-image",
+      "expo-maps",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 120,
+          "resizeMode": "contain",
+          "backgroundColor": "#F7F6F3"
+        }
+      ]
+    ]
+  }
+}

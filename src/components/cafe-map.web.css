@@ -1,0 +1,94 @@
+/* Leaflet map and pins for the web build. Colours follow docs/DESIGN.md. */
+.cm-map {
+  position: absolute;
+  inset: 0;
+  background: #f0eee9;
+  font-family: "IBMPlexSans_400Regular", system-ui, sans-serif;
+}
+
+.cm-pin {
+  background: transparent;
+  border: 0;
+}
+
+.cm-pin__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: #7a5230;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: background-color 120ms ease;
+}
+
+.cm-pin__body svg {
+  transform: rotate(45deg);
+}
+
+.cm-pin--selected .cm-pin__body {
+  background: #1f2a37;
+}
+
+.cm-pin:focus-visible {
+  outline: none;
+}
+
+.cm-pin:focus-visible .cm-pin__body {
+  outline: 2px solid #1f2a37;
+  outline-offset: 2px;
+}
+
+.cm-tooltip {
+  border: 1px solid #e2dfd8;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  color: #1a1a1a;
+  font-size: 13px;
+  padding: 4px 8px;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+}
+
+/* Dark theme: nativewind toggles the "dark" class on <html>. */
+.dark .cm-map {
+  background: #262624;
+}
+
+.dark .cm-pin__body {
+  border-color: #1c1c1a;
+}
+
+.dark .cm-pin--selected .cm-pin__body {
+  background: #edebe6;
+  color: #1c1c1a;
+}
+
+.dark .cm-tooltip {
+  background: #1c1c1a;
+  border-color: #2e2d2a;
+  color: #edebe6;
+}
+
+.dark .cm-tooltip.leaflet-tooltip-top::before {
+  border-top-color: #2e2d2a;
+}
+
+.dark .leaflet-control-attribution {
+  background: rgba(28, 28, 26, 0.85);
+  color: #a3a098;
+}
+
+.dark .leaflet-control-attribution a {
+  color: #c99a6e;
+}
+
+.dark .cm-pin:focus-visible .cm-pin__body {
+  outline-color: #edebe6;
+}
