@@ -1,0 +1,272 @@
+[
+  {
+    "id": "kuytu-kahve",
+    "name": "Kuytu Kahve",
+    "neighbourhood": "Moda",
+    "district": "Kadıköy",
+    "address": "Moda, Kadıköy, İstanbul",
+    "latitude": 40.9842,
+    "longitude": 29.0257,
+    "rating": 4.7,
+    "priceLevel": 2,
+    "openingHours": "08:00–23:00",
+    "tags": [
+      "Kendi kavurur",
+      "Sessiz"
+    ],
+    "description": "Moda'nın ara sokaklarında, sekiz kişilik küçük bir dükkân. Haftada iki kez kendi çekirdeğini kavuruyor; filtre kahveyi barın önünde demliyorlar.",
+    "image": "kuytu-kahve.jpg"
+  },
+  {
+    "id": "yeldegirmeni-kavurucusu",
+    "name": "Yeldeğirmeni Kavurucusu",
+    "neighbourhood": "Yeldeğirmeni",
+    "district": "Kadıköy",
+    "address": "Yeldeğirmeni, Kadıköy, İstanbul",
+    "latitude": 40.9936,
+    "longitude": 29.027,
+    "rating": 4.6,
+    "priceLevel": 2,
+    "openingHours": "07:30–20:00",
+    "tags": [
+      "Kendi kavurur",
+      "Çalışmaya uygun"
+    ],
+    "description": "Eski bir matbaa binasında, uzun ortak masalar ve bol priz. Hafta içi sabahları dizüstüyle çalışanlar çoğunlukta.",
+    "image": "yeldegirmeni-kavurucusu.jpg"
+  },
+  {
+    "id": "galata-kose",
+    "name": "Galata Köşe",
+    "neighbourhood": "Galata",
+    "district": "Beyoğlu",
+    "address": "Galata, Beyoğlu, İstanbul",
+    "latitude": 41.0257,
+    "longitude": 28.9741,
+    "rating": 4.3,
+    "priceLevel": 3,
+    "openingHours": "09:00–00:00",
+    "tags": [
+      "Manzara",
+      "Tatlı"
+    ],
+    "description": "Kuleye bakan köşe masaları için erken gitmek gerekiyor. Ev yapımı tatlıları ve Türk kahvesi öne çıkıyor.",
+    "image": "galata-kose.jpg"
+  },
+  {
+    "id": "cihangir-pencere",
+    "name": "Cihangir Pencere",
+    "neighbourhood": "Cihangir",
+    "district": "Beyoğlu",
+    "address": "Cihangir, Beyoğlu, İstanbul",
+    "latitude": 41.0317,
+    "longitude": 28.9829,
+    "rating": 4.5,
+    "priceLevel": 2,
+    "openingHours": "08:00–22:00",
+    "tags": [
+      "Kahvaltı",
+      "Evcil hayvan dostu"
+    ],
+    "description": "Büyük pencereleri ve yokuşa bakan tek sıra masasıyla mahalle kafesi. Hafta sonu kahvaltısı için sıra olabiliyor.",
+    "image": "cihangir-pencere.jpg"
+  },
+  {
+    "id": "karakoy-tezgah",
+    "name": "Karaköy Tezgâh",
+    "neighbourhood": "Karaköy",
+    "district": "Beyoğlu",
+    "address": "Karaköy, Beyoğlu, İstanbul",
+    "latitude": 41.0236,
+    "longitude": 28.9771,
+    "rating": 4.4,
+    "priceLevel": 3,
+    "openingHours": "08:00–21:00",
+    "tags": [
+      "Üçüncü dalga",
+      "Ayakta servis"
+    ],
+    "description": "Tezgâh başında hızlı espresso; arka taraftaki küçük salonda demleme kahve ve haftanın çekirdeği.",
+    "image": "karakoy-tezgah.jpg"
+  },
+  {
+    "id": "balat-renk",
+    "name": "Balat Renk",
+    "neighbourhood": "Balat",
+    "district": "Fatih",
+    "address": "Balat, Fatih, İstanbul",
+    "latitude": 41.0291,
+    "longitude": 28.9489,
+    "rating": 4.2,
+    "priceLevel": 1,
+    "openingHours": "09:00–21:00",
+    "tags": [
+      "Bahçe",
+      "Uygun fiyat"
+    ],
+    "description": "Renkli evlerin arasında, arka bahçesi asmalı eski bir Rum evi. Ev yapımı limonata ve bol köpüklü Türk kahvesi.",
+    "image": "balat-renk.jpg"
+  },
+  {
+    "id": "kuzguncuk-bahce",
+    "name": "Kuzguncuk Bahçe",
+    "neighbourhood": "Kuzguncuk",
+    "district": "Üsküdar",
+    "address": "Kuzguncuk, Üsküdar, İstanbul",
+    "latitude": 41.0364,
+    "longitude": 29.0311,
+    "rating": 4.8,
+    "priceLevel": 2,
+    "openingHours": "09:00–22:00",
+    "tags": [
+      "Bahçe",
+      "Sessiz"
+    ],
+    "description": "Bostanın yanında, ağaçların altında birkaç masa. Kitap okumak için şehrin en sakin köşelerinden biri.",
+    "image": "kuzguncuk-bahce.jpg"
+  },
+  {
+    "id": "bebek-sahil",
+    "name": "Bebek Sahil Kahvesi",
+    "neighbourhood": "Bebek",
+    "district": "Beşiktaş",
+    "address": "Bebek, Beşiktaş, İstanbul",
+    "latitude": 41.0771,
+    "longitude": 29.0436,
+    "rating": 4.4,
+    "priceLevel": 3,
+    "openingHours": "08:00–00:00",
+    "tags": [
+      "Deniz manzarası",
+      "Kahvaltı"
+    ],
+    "description": "Sahil yürüyüşünün ortasında, denize sıfır birkaç masa. Gün batımında yer bulmak zor.",
+    "image": "bebek-sahil.jpg"
+  },
+  {
+    "id": "arnavutkoy-ahsap",
+    "name": "Arnavutköy Ahşap",
+    "neighbourhood": "Arnavutköy",
+    "district": "Beşiktaş",
+    "address": "Arnavutköy, Beşiktaş, İstanbul",
+    "latitude": 41.0669,
+    "longitude": 29.0429,
+    "rating": 4.5,
+    "priceLevel": 2,
+    "openingHours": "08:30–22:00",
+    "tags": [
+      "Deniz manzarası",
+      "Tatlı"
+    ],
+    "description": "Ahşap bir yalının zemin katında; tarçınlı çörek ve demleme kahve ikilisiyle biliniyor.",
+    "image": "arnavutkoy-ahsap.jpg"
+  },
+  {
+    "id": "nisantasi-kitap",
+    "name": "Nişantaşı Kitap Kafe",
+    "neighbourhood": "Nişantaşı",
+    "district": "Şişli",
+    "address": "Nişantaşı, Şişli, İstanbul",
+    "latitude": 41.0511,
+    "longitude": 28.9931,
+    "rating": 4.3,
+    "priceLevel": 3,
+    "openingHours": "10:00–22:00",
+    "tags": [
+      "Kitapçı",
+      "Çalışmaya uygun"
+    ],
+    "description": "Raflardan kitap alıp masaya oturabildiğin bir kitapçı-kafe. Akşamları zaman zaman söyleşi düzenleniyor.",
+    "image": "nisantasi-kitap.jpg"
+  },
+  {
+    "id": "ortakoy-meydan",
+    "name": "Ortaköy Meydan",
+    "neighbourhood": "Ortaköy",
+    "district": "Beşiktaş",
+    "address": "Ortaköy, Beşiktaş, İstanbul",
+    "latitude": 41.0474,
+    "longitude": 29.0266,
+    "rating": 4.1,
+    "priceLevel": 2,
+    "openingHours": "08:00–01:00",
+    "tags": [
+      "Deniz manzarası",
+      "Geç saate kadar açık"
+    ],
+    "description": "Meydanın hareketli köşesinde; köprü manzarası ve gece geç saate kadar açık mutfak.",
+    "image": "ortakoy-meydan.jpg"
+  },
+  {
+    "id": "uskudar-iskele",
+    "name": "Üsküdar İskele",
+    "neighbourhood": "Üsküdar",
+    "district": "Üsküdar",
+    "address": "Üsküdar, Üsküdar, İstanbul",
+    "latitude": 41.0264,
+    "longitude": 29.0151,
+    "rating": 4.2,
+    "priceLevel": 1,
+    "openingHours": "07:00–23:00",
+    "tags": [
+      "Deniz manzarası",
+      "Uygun fiyat"
+    ],
+    "description": "Vapur bekleyenlerin uğrak yeri: simit, çay ve hızlı bir filtre kahve. Kız Kulesi'ne yürüme mesafesinde.",
+    "image": "uskudar-iskele.jpg"
+  },
+  {
+    "id": "fenerbahce-fener",
+    "name": "Fenerbahçe Fener",
+    "neighbourhood": "Fenerbahçe",
+    "district": "Kadıköy",
+    "address": "Fenerbahçe, Kadıköy, İstanbul",
+    "latitude": 40.9699,
+    "longitude": 29.0391,
+    "rating": 4.6,
+    "priceLevel": 2,
+    "openingHours": "08:00–22:00",
+    "tags": [
+      "Deniz manzarası",
+      "Evcil hayvan dostu"
+    ],
+    "description": "Fenerbahçe Parkı'nın girişinde; köpeğiyle yürüyüşe çıkanların sabah durağı.",
+    "image": "fenerbahce-fener.jpg"
+  },
+  {
+    "id": "besiktas-carsi",
+    "name": "Beşiktaş Çarşı Kahve",
+    "neighbourhood": "Beşiktaş",
+    "district": "Beşiktaş",
+    "address": "Beşiktaş, Beşiktaş, İstanbul",
+    "latitude": 41.0431,
+    "longitude": 29.0061,
+    "rating": 4.3,
+    "priceLevel": 1,
+    "openingHours": "07:30–21:00",
+    "tags": [
+      "Uygun fiyat",
+      "Ayakta servis"
+    ],
+    "description": "Çarşının içinde küçük bir tezgâh; öğrenciler ve esnaf için hızlı, uygun fiyatlı kahve.",
+    "image": "besiktas-carsi.jpg"
+  },
+  {
+    "id": "kurtulus-firin",
+    "name": "Kurtuluş Fırın Kafe",
+    "neighbourhood": "Kurtuluş",
+    "district": "Şişli",
+    "address": "Kurtuluş, Şişli, İstanbul",
+    "latitude": 41.0468,
+    "longitude": 28.9811,
+    "rating": 4.5,
+    "priceLevel": 1,
+    "openingHours": "07:00–20:00",
+    "tags": [
+      "Fırın",
+      "Kahvaltı"
+    ],
+    "description": "Sabah ilk ekmeğin çıktığı saatte en kalabalık hâlinde. Çörekler ve ekşi mayalı ekmek dükkânın kendisi.",
+    "image": "kurtulus-firin.jpg"
+  }
+]
