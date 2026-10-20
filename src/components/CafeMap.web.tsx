@@ -7,12 +7,25 @@ import { AttributionControl, MapContainer, Marker, TileLayer, Tooltip, useMap } 
 
 import type { CafeMapProps } from "./CafeMap.types";
 
+// Esri's grey canvas basemaps: quiet enough for the coffee pins and free to use without a key.
+// Each theme is a base layer plus a separate layer of place names on top.
+const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas";
 const TILES = {
-  light: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-  dark: "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+  light: [`${ESRI}/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}`, `${ESRI}/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}`],
+  dark: [`${ESRI}/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}`, `${ESRI}/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}`],
 };
 const ATTRIBUTION =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
+  'Tiles &copy; <a href="https://www.esri.com">Esri</a> &mdash; Esri, HERE, Garmin, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+
+function BaseLayers({ dark }: { dark?: boolean }) {
+  const [base, labels] = dark ? TILES.dark : TILES.light;
+  return (
+    <>
+      <TileLayer key={base} url={base} attribution={ATTRIBUTION} maxNativeZoom={16} />
+      <TileLayer key={labels} url={labels} maxNativeZoom={16} />
+    </>
+  );
+}
 
 // Small cup glyph (Lucide "coffee", MIT) drawn inside the pin.
 const CUP =
@@ -42,7 +55,7 @@ function CameraController({ camera }: Pick<CafeMapProps, "camera">) {
   return null;
 }
 
-/** Web fallback: expo-maps has no web support, so the web build uses Leaflet with CARTO tiles. */
+/** Web fallback: expo-maps has no web support, so the web build uses Leaflet with Esri tiles. */
 export function CafeMap({ cafes, initialCamera, camera, selectedId, onSelect, dark }: CafeMapProps) {
   const icons = useMemo(() => ({ normal: pin(false), selected: pin(true) }), []);
 
@@ -56,7 +69,7 @@ export function CafeMap({ cafes, initialCamera, camera, selectedId, onSelect, da
     >
       <AttributionControl position="bottomright" prefix="Leaflet" />
       <CameraController camera={camera} />
-      <TileLayer key={dark ? "dark" : "light"} url={dark ? TILES.dark : TILES.light} attribution={ATTRIBUTION} />
+      <BaseLayers dark={dark} />
       {cafes.map((cafe) => (
         <Marker
           key={cafe.id}
