@@ -22,7 +22,7 @@ Her aşama ayrı bir branch ve PR olarak yapılır (`stage/<no>-<kisa-ad>`). Bir
 - [x] Alt kısımda yatay kafe kartı listesi (harita ile senkron), arama
 
 ## Aşama 3 — Teslim
-- [ ] App icon + splash (`app.json`)
-- [ ] `npx tsc --noEmit` ve lint temiz
-- [ ] README (TR + EN): teknolojiler, kafe JSON örneği, dev build notları (`npx expo run:android|ios`), ekran görüntüleri
+- [x] App icon + splash (`app.json`)
+- [x] `npx tsc --noEmit` ve lint temiz
+- [x] README (TR + EN): teknolojiler, kafe JSON örneği, dev build notları (`npx expo run:android|ios`), ekran görüntüleri
 - [ ] Berat'ın kendi cihazında dev build ile doğrulaması (elle)
