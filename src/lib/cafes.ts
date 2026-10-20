@@ -52,3 +52,36 @@ export function priceLabel(level: Cafe["priceLevel"]): string {
 }
 
 const round = (value: number) => Math.round(value * 1e5) / 1e5;
+
+/** Lower-cases with Turkish rules and strips accents, so "kadikoy" finds "Kadıköy" and "İSTANBUL" finds "istanbul". */
+export function normalize(text: string): string {
+  return text
+    .toLocaleLowerCase("tr-TR")
+    .replace(/ı/g, "i")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** Cafes whose name, neighbourhood, district or tags contain every word of the query. */
+export function searchCafes(list: readonly Cafe[], query: string): Cafe[] {
+  const words = normalize(query).split(" ").filter(Boolean);
+  if (words.length === 0) return [...list];
+  return list.filter((cafe) => {
+    const haystack = normalize([cafe.name, cafe.neighbourhood, cafe.district, ...cafe.tags].join(" "));
+    return words.every((word) => haystack.includes(word));
+  });
+}
+
+export const FOCUS_ZOOM = 15;
+
+/**
+ * Camera on a single cafe. `offsetPx` moves the cafe that many screen pixels up from the
+ * centre, so it stays visible above the bottom sheet.
+ */
+export function focusCamera(cafe: Cafe, offsetPx = 0, zoom = FOCUS_ZOOM): Camera {
+  const degreesPerPx = 360 / (256 * 2 ** zoom);
+  const latitudeShift = offsetPx * degreesPerPx * Math.cos((cafe.latitude * Math.PI) / 180);
+  return { latitude: round(cafe.latitude - latitudeShift), longitude: cafe.longitude, zoom };
+}
