@@ -13,6 +13,8 @@ A mobile app for finding independent cafes in Istanbul on a map. Tap a pin to se
 
 ## Try it
 
+**Live demo:** [beratoguzhan620.github.io/cafe-map](https://beratoguzhan620.github.io/cafe-map/) (the web version, with a Leaflet map; published from `main` by `.github/workflows/deploy.yml`)
+
 The map uses native map SDKs through `expo-maps`, which Expo Go does not include, so the phone apps need a **development build**. The web version runs without one.
 
 ```bash
@@ -150,7 +152,6 @@ The end-to-end flow runs in a real browser on phone and desktop sizes, in light 
 ## Roadmap and known gaps
 
 - Checking the development build on a real iPhone and Android phone.
-- Live web demo.
 - Filters for price, rating and opening hours, and the user's own location.
 - Clustering pins when there are many cafes.
 

@@ -13,6 +13,8 @@
 
 ## Deneme
 
+**Canlı demo:** [beratoguzhan620.github.io/cafe-map](https://beratoguzhan620.github.io/cafe-map/) (Leaflet haritalı web sürümü; `main`'den `.github/workflows/deploy.yml` ile yayınlanır)
+
 Harita, `expo-maps` üzerinden yerel harita SDK'larını kullanıyor. Expo Go bunları içermediği için telefonda **development build** gerekiyor. Web sürümü buna ihtiyaç duymadan çalışır.
 
 ```bash
@@ -150,7 +152,6 @@ Uçtan uca akış gerçek bir tarayıcıda, telefon ve masaüstü boyutlarında,
 ## Yol haritası ve eksikler
 
 - Development build'in gerçek bir iPhone ve Android telefonda denenmesi.
-- Canlı web demosu.
 - Fiyat, puan ve çalışma saati filtreleri; kullanıcının kendi konumu.
 - Kafe sayısı artınca pinlerin kümelenmesi.
 
